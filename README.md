@@ -1,6 +1,7 @@
 # Toaha-s-Bitwise-Method
 **Written by:** Hasin Israk Toaha (Constant T) (SSC 25) 
 /*
+
 জীবন কতদিন জানি না, তাই পাবলিশ করে দেই, দয়াকরে কোথাও লিখলে আমাকে ক্রেডিট দিবেনঃ
 
 শিরোনামঃ Toaha's Bitwise Method.
