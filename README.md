@@ -131,7 +131,7 @@ public class ToahaSBitwiseRule
 ```Python
 
 
-#Format inventor: Hasin Israk Toaha (Constant T)
+#Formula inventor: Hasin Israk Toaha (Constant T)
 
 #Python code written by: Hasin Israk Toaha
 
