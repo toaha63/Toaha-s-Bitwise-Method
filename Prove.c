@@ -19,36 +19,66 @@ A={3,6,9, 12,15,18,21... ...}
 
 এই সমীকরণের প্রমাণ এই সি প্রোগ্রামঃ
 */
+
 #include<stdio.h>
 #include<stdbool.h>
 #include<stdlib.h>
-bool is_prime(int num)
+#include<time.h>
+#include<math.h>
+
+bool is_prime(unsigned long long int num)
 {
-    if (num <= 1) return false;
-    for (int i = 2; i * i <= num; i++)
+    if (num <= 1) 
     {
-        if (num % i == 0) return false;
+        return false;
+    }
+    if (num <= 3) 
+    {
+        return true;
+    }
+    if (num % 2 == 0 || num % 3 == 0) 
+    {
+        return false;
+    }
+
+    for (unsigned long long int i = 5; i * i <= num; i += 6) 
+    {
+        if (num % i == 0 || num % (i + 2) == 0) 
+        {
+            return false;
+        }
     }
     return true;
 }
 
 int main(int argc, char** argv)
 {
-    for (int i = 1; i <= 5000; i++)
+    puts("Enter terms: ");
+    unsigned long long int terms = 0;
+    scanf("%llu", &terms);
+    
+    clock_t start_time = clock();
+
+    for (unsigned long long int i = 1; i <= terms; i++) 
     {
-        if (i % 2 == 0)
+        if (i % 2 == 0) 
         {
-            int next = i + 1;
-            if (is_prime(next) || next % 3 == 0)
+            unsigned long long int next = i + 1;
+            if (is_prime(next) || next % 3 == 0) 
             {
-                int and_result = i & next;
-                int or_result = i | next;
-                printf("%d & %d = %d\n%d | %d = %d\n\n",i,i+1,and_result,i,i+1,or_result);
+                unsigned long long int and_result = i & next;
+                unsigned long long int or_result = i | next;
+                printf("%llu & %llu = %llu\n%llu | %llu = %llu\n\n", i, next, and_result, i, next, or_result);
             }
         }
     }
+
+    clock_t end_time = clock();
+
+    printf("Time taken: %f seconds\n", (double)(end_time - start_time) / CLOCKS_PER_SEC);
     exit(EXIT_SUCCESS);
 }
+
 
 /*
 
